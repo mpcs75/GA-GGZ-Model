@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Generieke Architectuur GGZ</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Generieke Architectuur GGZ</b>
+
+            <!-- If a View with Viewpoint -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+                       <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-purpose"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab" class="i18n-query"></a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap">Dit model heeft als basis een op maat gemaakte weergave van het Referentie Domeinmodel voor de GGZ versie 1.
+In dit model worden informatiedomeinen, bedrijfsarctiviteiten, en verwerkte informatie beschreven. Deze drie onderdelen is aangevuld met 14 extra onderdelen om tot een compleet generiek raamwerk te komen.
+Dit raamwerk geeft een archictuur landschap weer zoals dat er uit zou kunnen zien binnen een GGZ instelling.
+Dit raamwerk is bedoeld als vrijblijvend hulpmiddel voor beoefenaars van digitale architectuur binnen een GGZ instelling. 
+
+Bron RDG onderwerpen: https://nictiz.nl/standaarden/referentiedomeinenmodellen/referentiedomeinmodel-ggz/
+
+Git repo voor comments (toegang is nodig): https://github.com/mpcs75/GA-GGZ-Model
+</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="query">
+						<br>
+						<style>
+						#myprompt {
+						    width: 80%;
+						    font-family: Consolas,Monaco, monospace;
+						}
+						</style>
+
+						<div id='myconsole'></div>
+
+						<p>
+							<tt><span id="useid">alasql</span> &gt;</tt> <input id='myprompt' autofocus/> 
+						</p>
+
+						<script src='../../lib/alasql/alasql.min.js'></script>
+
+						<script>
+							function decodeURL(s) {
+								return decodeURIComponent(s.replace(/\+/g, "%20"));
+							}
+
+							var first = decodeURI(location.search.substr(1));
+						 	alasql.options.logtarget = 'myconsole';
+							alasql.prompt('myprompt','useid');
+							alasql.prompt('myprompt','useid', first);
+
+							var dataElements = [ ];	  
+						  	var dataProperties = [ ];
+						 	var dataRelationships = [ ];
+						 	var dataViews = [ ];
+						 	var dataViewsContent = [ ];
+						 	var dataFolders = [ ];
+						 	var dataFoldersContent = [ ];
+
+							dataFolders.push({id:"id-c5cf03781915417c834697ec3c81b34e", type:"ArchimateModel", name:decodeURL("Generieke+Architectuur+GGZ"), documentation:decodeURL("")});
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-659b409f2adf4c938b2a876ed5156912", contenttype:"Folder"});
+								dataFolders.push({id:"id-659b409f2adf4c938b2a876ed5156912", type:"Folder", name:decodeURL("Strategy"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-cf02e973edf2431b9ea61c055f60a827", contenttype:"Folder"});
+								dataFolders.push({id:"id-cf02e973edf2431b9ea61c055f60a827", type:"Folder", name:decodeURL("Business"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-cf02e973edf2431b9ea61c055f60a827", contentid:"id-e810d2eecdd94be7b04f6fe9a9c86726", contenttype:"Product"});
+										dataElements.push({id:"id-e810d2eecdd94be7b04f6fe9a9c86726", type:"Product", specialization:decodeURL(""), name:decodeURL("Product"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-cf02e973edf2431b9ea61c055f60a827", contentid:"id-56eedd7783574b698caf9d12c71e7a45", contenttype:"BusinessFunction"});
+										dataElements.push({id:"id-56eedd7783574b698caf9d12c71e7a45", type:"BusinessFunction", specialization:decodeURL(""), name:decodeURL("Business+Function"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-abaa2dcf77f046608e697feb27aa7f9c", contenttype:"Folder"});
+								dataFolders.push({id:"id-abaa2dcf77f046608e697feb27aa7f9c", type:"Folder", name:decodeURL("Application"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-abaa2dcf77f046608e697feb27aa7f9c", contentid:"id-32171997581345a784cf3eab3bbaca8c", contenttype:"ApplicationComponent"});
+										dataElements.push({id:"id-32171997581345a784cf3eab3bbaca8c", type:"ApplicationComponent", specialization:decodeURL(""), name:decodeURL("Application+Component"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-e8491e2910dc4d5b97097a44b48e6925", contenttype:"Folder"});
+								dataFolders.push({id:"id-e8491e2910dc4d5b97097a44b48e6925", type:"Folder", name:decodeURL("Technology+%26+Physical"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-e8491e2910dc4d5b97097a44b48e6925", contentid:"id-6d68cdc49d914e51b773c017f9afbb92", contenttype:"Node"});
+										dataElements.push({id:"id-6d68cdc49d914e51b773c017f9afbb92", type:"Node", specialization:decodeURL(""), name:decodeURL("Node"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-cb900494e167487ea5a0506785994462", contenttype:"Folder"});
+								dataFolders.push({id:"id-cb900494e167487ea5a0506785994462", type:"Folder", name:decodeURL("Motivation"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-cb900494e167487ea5a0506785994462", contentid:"id-db49749990b0420faacfb2312f7e2367", contenttype:"Requirement"});
+										dataElements.push({id:"id-db49749990b0420faacfb2312f7e2367", type:"Requirement", specialization:decodeURL(""), name:decodeURL("Requirement"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-c6525af75cb143d7a31f08e918e15792", contenttype:"Folder"});
+								dataFolders.push({id:"id-c6525af75cb143d7a31f08e918e15792", type:"Folder", name:decodeURL("Implementation+%26+Migration"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-d91f1e0c10bd4bf4b0419978e27d66cd", contenttype:"Folder"});
+								dataFolders.push({id:"id-d91f1e0c10bd4bf4b0419978e27d66cd", type:"Folder", name:decodeURL("Other"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-edeea513c78447dc826be80d98af14fb", contenttype:"Folder"});
+								dataFolders.push({id:"id-edeea513c78447dc826be80d98af14fb", type:"Folder", name:decodeURL("Relations"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-c5cf03781915417c834697ec3c81b34e", contentid:"id-630ad383a4a946d69009072723f3784f", contenttype:"Folder"});
+								dataFolders.push({id:"id-630ad383a4a946d69009072723f3784f", type:"Folder", name:decodeURL("Views"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-630ad383a4a946d69009072723f3784f", contentid:"id-af85e9b1958d479c9b6b74fac80ce8b9", contenttype:"Folder"});
+									dataFolders.push({id:"id-af85e9b1958d479c9b6b74fac80ce8b9", type:"Folder", name:decodeURL("02.+Bedrijfsarchitectuur"), documentation:decodeURL("")});
+										dataFoldersContent.push({folderid:"id-af85e9b1958d479c9b6b74fac80ce8b9", contentid:"id-7ae3dd73c51541618f3ca4f48dbfca41", contenttype:"ArchimateDiagramModel"});
+											dataViews.push({id:"id-7ae3dd73c51541618f3ca4f48dbfca41", type:"ArchimateDiagramModel", name:decodeURL("01.+Bedrijfsdomeinen"), documentation:decodeURL("Bedrijfsdomeinen+zijn+op+hoofdniveau+een+bundeling+van+gelijksoortige+werkzaamheden.+Bijvoorbeeld+gebaseerd+op+gelijksoortige+kennisgebieden+of+gewenste+uitkomsten.")});
+													dataViewsContent.push({viewid:"id-7ae3dd73c51541618f3ca4f48dbfca41", contentid:"id-56eedd7783574b698caf9d12c71e7a45", contenttype:"BusinessFunction"});
+
+
+									dataFoldersContent.push({folderid:"id-630ad383a4a946d69009072723f3784f", contentid:"id-248924f7db2e4d62b517c8d04deb4829", contenttype:"Folder"});
+									dataFolders.push({id:"id-248924f7db2e4d62b517c8d04deb4829", type:"Folder", name:decodeURL("01.+Wetten+%26+Normen"), documentation:decodeURL("")});
+
+									dataFoldersContent.push({folderid:"id-630ad383a4a946d69009072723f3784f", contentid:"id-f5c7420c46f94235ac3a89f9c95586ea", contenttype:"Folder"});
+									dataFolders.push({id:"id-f5c7420c46f94235ac3a89f9c95586ea", type:"Folder", name:decodeURL("00.+Overzicht"), documentation:decodeURL("")});
+										dataFoldersContent.push({folderid:"id-f5c7420c46f94235ac3a89f9c95586ea", contentid:"id-29e682b4f2474abdb6a090dfe25ca979", contenttype:"SketchModel"});
+											dataViews.push({id:"id-29e682b4f2474abdb6a090dfe25ca979", type:"SketchModel", name:decodeURL("Overzicht"), documentation:decodeURL("De+architectuur+van+dit+model+is+opgebouwd+uit+vier+hoofdlagen%3A+Wetten+%26+normen%2C+Bedrijfsarchitectuur%2C+informatie+architectuur%2C+en+technische+architectuur.")});
+													
+													
+													
+													
+													
+
+													
+													
+													
+													
+													
+
+
+
+
+
+
+
+						    alasql('CREATE TABLE Elements');
+						    alasql('CREATE TABLE Properties');
+						    alasql('CREATE TABLE Relationships');
+						    alasql('CREATE TABLE Views');
+						    alasql('CREATE TABLE ViewsContent');
+						    alasql('CREATE TABLE Folders');
+						    alasql('CREATE TABLE FoldersContent');
+
+						    alasql.tables.Elements.data = dataElements;
+						    alasql.tables.Properties.data = dataProperties;
+						    alasql.tables.Relationships.data = dataRelationships;
+						    alasql.tables.Views.data = dataViews;
+						    alasql.tables.ViewsContent.data = dataViewsContent;
+						    alasql.tables.Folders.data = dataFolders;
+						    alasql.tables.FoldersContent.data = dataFoldersContent;
+						</script> 
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>
